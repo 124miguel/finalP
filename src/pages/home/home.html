@@ -12,4 +12,41 @@
 
 <ion-content padding class="home">
 
+  <button ion-button block round (click)="presentPrompt()" color="light">publicar articulo</button>
+  <h2>Articulos varios</h2>
+  <div id="slide_contenedor">
+    <ion-slides autoplay="5000" loop="true" speed="1000" >
+    <ion-slide *ngFor="let articulo_c of art_c">
+      <h1>{{articulo_c.titulo}}</h1>
+    </ion-slide>
+   
+    </ion-slides>
+  </div>
+<ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+<button ion-button block round (click)="opcionCategoria()" color="dark">Categorias</button>
+	<div *ngIf="searching" class="spinner-container">
+		<ion-spinner></ion-spinner>
+</div>
+
+
+  <ion-list>
+    <!-- <ion-item *ngFor="let song of art_totales2 | async">
+    {{song.title}}
+     </ion-item>-->
+    <div *ngFor="let articulo of articulos">
+     <ion-item *ngIf="mostrar(articulo) == 1">dd</ion-item>
+    <button ion-item  (click)="itemTapped($event, articulo)">
+      <ion-icon name="{{iconoCat(articulo.categoria)}}" item-left></ion-icon>
+      <ion-title>{{articulo.titulo}}</ion-title>
+    
+     <br/>
+     <div class="item-note" item-right>
+        {{articulo.escrito}}
+      </div>
+    </button>
+    </div>
+  </ion-list>
 </ion-content>
+
+
+

@@ -10,15 +10,15 @@
     Ingresa con Facebook
   </button>
 
-  <button ion-button color="light" class="sign-up-btn" (click)="openSignUpPage()">Sign Up</button>
-  <button ion-button color="light" class="log-in-btn" (click)="openLoginPage()">Log In</button>
+  <button ion-button color="light" class="sign-up-btn" (click)="openSignUpPage()">Registrar</button>
+  <button ion-button color="light" class="log-in-btn" (click)="openLoginPage()">Iniciar</button>
 
   <div padding class="error" *ngIf="error">
     <p>{{error}}</p>
   </div>
 
   <div class="terms-of-use-txt">
-    Al registrarse, usted acepta los 
-    <b (click)="openTermsOfService()">Términos de servicio</b>
+    Al registrarse, usted acepta los
+    <b (click)="openTermsOfService()">Terminos de servicio</b>
   </div>
 </ion-content>

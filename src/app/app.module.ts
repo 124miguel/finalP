@@ -1,7 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { ItemDetailsPage } from '../pages/item-details/item-details';
+import { BrowserModule } from '@angular/platform-browser';
 // Pages
 import { ForgotPasswordPage } from '../pages/auth/forgot-password/forgot-password';
 import { AuthPage } from '../pages/auth/home/home';
@@ -31,9 +32,11 @@ export const firebaseConfig = {
     LoginEmailPage,
     SignUpPage,
     HomePage,
-    TermsOfServicePage
+    TermsOfServicePage,
+    ItemDetailsPage
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig), 
   ],
@@ -45,7 +48,8 @@ export const firebaseConfig = {
     LoginEmailPage,
     SignUpPage,
     HomePage,
-    TermsOfServicePage
+    TermsOfServicePage,
+    ItemDetailsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]
 })

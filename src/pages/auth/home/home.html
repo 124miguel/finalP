@@ -1,24 +1,15 @@
 <ion-content class="auth-home">
   <div class="logo">
     <div class="logo-icon">
-      Imagen de Crash
+      Proyecto Final
     </div>
   </div>
 
-  <button ion-button block class="facebook-btn" (click)="loginUserWithFacebook()">
-    <ion-icon name="logo-facebook"></ion-icon>
-    Ingresa con Facebook
+  <button ion-button block class="facebook-btn" (click)="openLoginPage()">
+    Ingresar
   </button>
-
-  <button ion-button color="light" class="sign-up-btn" (click)="openSignUpPage()">Registrar</button>
-  <button ion-button color="light" class="log-in-btn" (click)="openLoginPage()">Iniciar</button>
-
   <div padding class="error" *ngIf="error">
     <p>{{error}}</p>
   </div>
 
-  <div class="terms-of-use-txt">
-    Al registrarse, usted acepta los
-    <b (click)="openTermsOfService()">Terminos de servicio</b>
-  </div>
 </ion-content>
